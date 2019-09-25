@@ -15,5 +15,15 @@ Route::get('/', function () {
     return view('layouts.mainlayout');
 });
 Route::get('/testing123', function () {
-    return view('adminpanel.layouts.app');
+    return view('layouts.app');
+});
+Auth::routes();
+
+// Route::get('/home', 'HomeController@index')->name('home');
+
+Route::group(['prefix'=>'backend','middleware'=>'auth','namespace'=>'admin'],function (){
+
+    Route::get('/dashboard', 'DashboardController@index')->name('admin.dashboard');
+    
+
 });
