@@ -27,6 +27,6 @@ Route::group(['prefix'=>'backend','middleware'=>'auth','namespace'=>'admin'],fun
     Route::get('/userlist', 'AdminPagesController@user_list')->name('admin.userlist');
     Route::get('/useradd', 'AdminPagesController@user_add')->name('admin.useradd');
     Route::post('/useradd', 'UserController@store')->name('admin.storeuser');
-    
+    Route::get('{userid}/edit', 'UserController@edit');
 
 });

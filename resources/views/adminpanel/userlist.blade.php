@@ -28,7 +28,7 @@ User List
                     <a href="#" class="dropdown-toggle avatar" data-toggle="dropdown"><i class="fa fa-bars" aria-hidden="true"></i></a>
                     <ul class="dropdown-menu">
                   
-                  <li class="m_2"><a href="#"><i class="fa fa-pencil"></i> Edit</a></li>
+                    <li class="m_2"><a href="{{url('backend/'.$user->id.'/edit')}}"><i class="fa fa-pencil"></i> Edit</a></li>
                   <li class="m_2"><a href="#"><i class="fa fa-ban"></i> Delete</a></li>
       
                                                                   

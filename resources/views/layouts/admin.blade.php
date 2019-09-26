@@ -54,7 +54,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             <ul class="nav navbar-nav navbar-right">
 				
 			    <li class="dropdown">
-	        		<a href="#" class="dropdown-toggle avatar" data-toggle="dropdown"><img src="{{ asset('backend/images/1.png') }}"></a>
+	        		<a href="#" class="dropdown-toggle avatar" data-toggle="dropdown"><p>{{Auth::user()->name}}</p></a>
 	        		<ul class="dropdown-menu">
 						
 						<li class="m_2"><a href="#"><i class="fa fa-shield"></i> Change Password</a></li>
