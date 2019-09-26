@@ -23,7 +23,10 @@ Auth::routes();
 
 Route::group(['prefix'=>'backend','middleware'=>'auth','namespace'=>'admin'],function (){
 
-    Route::get('/dashboard', 'DashboardController@index')->name('admin.dashboard');
+    Route::get('/dashboard', 'AdminPagesController@dashboard')->name('admin.dashboard');
+    Route::get('/userlist', 'AdminPagesController@user_list')->name('admin.userlist');
+    Route::get('/useradd', 'AdminPagesController@user_add')->name('admin.useradd');
+    Route::post('/useradd', 'UserController@store')->name('admin.storeuser');
     
 
 });

@@ -77,16 +77,16 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 <div class="sidebar-nav navbar-collapse">
                     <ul class="nav" id="side-menu">
                         <li>
-                            <a href="index.html"><i class="fa fa-dashboard fa-fw nav_icon"></i>Dashboard</a>
+                            <a href="{{ route('admin.dashboard') }}"><i class="fa fa-dashboard fa-fw nav_icon"></i>Dashboard</a>
                         </li>
                         <li>
                             <a href="#"><i class="fa fa-users fa-fw nav_icon"></i>Users<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="#">Add User</a>
+                                    <a href="{{ route('admin.useradd') }}">Add User</a>
                                 </li>
                                 <li>
-                                    <a href="#">Users List</a>
+                                    <a href="{{ route('admin.userlist') }}">Users List</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->
