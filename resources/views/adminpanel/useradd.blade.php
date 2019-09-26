@@ -14,7 +14,7 @@ User Add
 @section('adminpanel_content')
 <link href="{{ asset('backend/adduser/css/style.css')}}" rel="stylesheet" type="text/css" media="all" />
     <div class="center-container">
-	<div class="banner-dott">
+	<div class="banner-dott" style="height: 100%;">
 		<div class="main">
 			
 				<div class="w3layouts_main_grid">

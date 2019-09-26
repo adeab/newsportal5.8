@@ -114,7 +114,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             </div>
             <!-- /.navbar-static-side -->
         </nav>
-        <div id="page-wrapper">
+        <div id="page-wrapper" style="height:800px;">
 			@yield('adminpanel_content')
        </div>
       <!-- /#page-wrapper -->
