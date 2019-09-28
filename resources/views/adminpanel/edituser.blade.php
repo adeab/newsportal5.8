@@ -18,17 +18,18 @@ User Add
 		<div class="main">
 			
 				<div class="w3layouts_main_grid">
-					<form action="{{route('admin.storeuser')}}" method="post" class="w3_form_post">
-                        @csrf
+					<form action="{{route('users.update', $user->id) }}" method="post" class="w3_form_post">
+						@csrf
+						{{method_field('PATCH')}}
                         @if ($errors->any())
-    <div class="alert alert-danger">
-        <ul>
-            @foreach ($errors->all() as $error)
-                <li>{{ $error }}</li>
-            @endforeach
-        </ul>
-    </div>
-@endif
+						<div class="alert alert-danger">
+							<ul>
+								@foreach ($errors->all() as $error)
+									<li>{{ $error }}</li>
+								@endforeach
+							</ul>
+						</div>
+						@endif
 						<div class="w3_agileits_main_grid w3l_main_grid">
 							<span class="agileits_grid">
 								<label>Name </label>

@@ -95,11 +95,15 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             <a href="#"><i class="fa fa-file-text fa-fw nav_icon"></i>Posts<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
+                                    <a href="{{route('posts.create')}}">Upload A Post</a>
+                                </li>
+                                <li>
                                     <a href="#">All Posts</a>
                                 </li>
                                 <li>
-                                    <a href="#">Upload A Post</a>
+                                    <a href="#">Pending Posts</a>
                                 </li>
+                                
                             </ul>
                             <!-- /.nav-second-level -->
                         </li>
@@ -114,7 +118,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             </div>
             <!-- /.navbar-static-side -->
         </nav>
-        <div id="page-wrapper" style="height:800px;">
+        <div id="page-wrapper">
 			@yield('adminpanel_content')
        </div>
       <!-- /#page-wrapper -->

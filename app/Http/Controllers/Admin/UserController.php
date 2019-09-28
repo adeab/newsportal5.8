@@ -86,7 +86,18 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request, array(
+            'email'=>'required|email|unique:users,email,'. $id. ',id'
+        ));
+        $user=User::find($id);
+        $user->name=$request->name;
+        $user->email=$request->email;
+        $user->phone=$request->number;
+        $user->password=Hash::make($request->password);
+        $user->category=$request->country;
+        $user->save();
+        return redirect('/backend/userlist');
+        // dd($request);
     }
 
     /**
@@ -97,6 +108,9 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $user=User::find($id);
+        $user->delete();
+        return redirect('/backend/userlist');
+        
     }
 }

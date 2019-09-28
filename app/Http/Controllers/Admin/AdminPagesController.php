@@ -8,6 +8,10 @@ use App\User;
 
 class AdminPagesController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth', ['except' => ['upload_post']]);
+    }
     public function dashboard()
     {
         if(auth()->user()->category=="Admin" || auth()->user()->category=="Contributor" || auth()->user()->category=="Editor")
