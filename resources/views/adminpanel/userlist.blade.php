@@ -2,7 +2,7 @@
 @section('page_title')
 User List   
 @endsection
-@section('adminpanel_content')
+@section('body_content')
 <div class="span_3">
     <div class="bs-example1" data-example-id="contextual-table">
       <table class="table">

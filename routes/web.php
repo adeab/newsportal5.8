@@ -26,6 +26,9 @@ Route::group(['prefix'=>'backend','middleware'=>'auth','namespace'=>'admin'],fun
     Route::get('/dashboard', 'AdminPagesController@dashboard')->name('admin.dashboard');
     Route::get('/userlist', 'AdminPagesController@user_list')->name('admin.userlist');
     Route::get('/useradd', 'AdminPagesController@user_add')->name('admin.useradd');
+    Route::get('/posts', 'AdminPagesController@post_list')->name('admin.allposts');
+    Route::get('/pendings', 'AdminPagesController@pending_post_list')->name('admin.pendingposts');
+    Route::get('/myposts', 'AdminPagesController@my_post_list')->name('admin.myposts');
     Route::resource('users', 'UserController');
 });
 Route::resource('/posts', 'PostController');

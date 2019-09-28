@@ -11,7 +11,7 @@ User Add
 
 
 <!-- banner -->
-@section('adminpanel_content')
+@section('body_content')
 <link href="{{ asset('backend/adduser/css/style.css')}}" rel="stylesheet" type="text/css" media="all" />
     <div class="center-container">
 	<div class="banner-dott" style="height: 100%;">

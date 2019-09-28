@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\User;
+use App\Post;
 
 class AdminPagesController extends Controller
 {
@@ -27,7 +28,7 @@ class AdminPagesController extends Controller
     }
     public function user_list()
     {
-        if(auth()->user()->category=="Admin" || auth()->user()->category=="Contributor" || auth()->user()->category=="Editor")
+        if(auth()->user()->category=="Admin" || auth()->user()->category=="Editor")
         {
             $all_users = User::where('id', '!=', auth()->id())->get();
             return view('adminpanel.userlist', compact('all_users'));
@@ -40,7 +41,7 @@ class AdminPagesController extends Controller
     }
     public function user_add()
     {
-        if(auth()->user()->category=="Admin" || auth()->user()->category=="Contributor" || auth()->user()->category=="Editor")
+        if(auth()->user()->category=="Admin" || auth()->user()->category=="Editor")
         {
             return view('adminpanel.useradd');
         }
@@ -51,5 +52,49 @@ class AdminPagesController extends Controller
         
          
     }
+    public function post_list()
+    {
+        if(auth()->user()->category=="Admin" || auth()->user()->category=="Editor")
+        {
+            $all_posts=Post::where('publication_status', 'Published')->get();
+            return view('adminpanel.allposts', compact('all_posts'));
+        }
+        else
+        {
+            return view('pages.noaccess');
+        }
+        
+         
+    }
     
+    public function pending_post_list()
+    {
+        if(auth()->user()->category=="Admin" || auth()->user()->category=="Editor")
+        {
+            $all_posts=Post::where('publication_status', 'Pending')->get();
+            return view('adminpanel.allposts', compact('all_posts'));
+        }
+        else
+        {
+            return view('pages.noaccess');
+        }
+        
+         
+    }
+    public function my_post_list()
+    {
+        if(auth()->user()->category=="Admin" || auth()->user()->category=="Contributor" || auth()->user()->category=="Editor")
+        {
+            $all_posts=Post::where('user_id', auth()->user()->id)->get();
+            return view('adminpanel.myposts', compact('all_posts'));
+        }
+        else
+        {
+            return view('pages.noaccess');
+        }
+        
+         
+    }
+    
+        
 }

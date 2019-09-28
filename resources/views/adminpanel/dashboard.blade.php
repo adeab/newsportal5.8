@@ -2,7 +2,7 @@
 @section('page_title')
 Admin Dashboard    
 @endsection
-@section('adminpanel_content')
+@section('body_content')
 <div class="graphs">
     <div class="col_3">
        <div class="col-md-3 widget widget1">

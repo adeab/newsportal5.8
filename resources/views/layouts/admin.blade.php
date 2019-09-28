@@ -97,11 +97,16 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                 <li>
                                     <a href="{{route('posts.create')}}">Upload A Post</a>
                                 </li>
+                                
                                 <li>
-                                    <a href="#">All Posts</a>
+                                    <a href="{{route('admin.allposts')}}">All Posts</a>
+                                </li>
+
+                                <li>
+                                    <a href="{{route('admin.pendingposts')}}">Pending Posts</a>
                                 </li>
                                 <li>
-                                    <a href="#">Pending Posts</a>
+                                    <a href="{{route('admin.myposts')}}">My Posts</a>
                                 </li>
                                 
                             </ul>
@@ -119,7 +124,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             <!-- /.navbar-static-side -->
         </nav>
         <div id="page-wrapper">
-			@yield('adminpanel_content')
+			@yield('body_content')
        </div>
       <!-- /#page-wrapper -->
    </div>

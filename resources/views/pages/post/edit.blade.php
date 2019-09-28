@@ -22,8 +22,9 @@ Upload
         <h4>Upload Post</h4>
           <div class="tab-content">
                    <div class="tab-pane active" id="horizontal-form"> 
-                   <form method="post" class="form-horizontal" action="{{route('posts.store')}}" enctype="multipart/form-data" >
+                   <form method="post" class="form-horizontal" action="{{route('posts.update', $post->id)}}" enctype="multipart/form-data" >
                             @csrf
+                            {{method_field('PATCH')}}
                             @if ($errors->any())
 							<div class="alert alert-danger">
 								<ul>
@@ -34,7 +35,7 @@ Upload
 							</div>
 						@endif
                             <div class="form-group">
-                                <label for="exampleInputFile">Upload Cover Picture (Supported formats: jpg,jpeg,png,bmp,tiff)</label>
+                                <label for="exampleInputFile">Upload Cover Picture to change (Supported formats: jpg,jpeg,png,bmp,tiff)</label>
                                 <input type="file" name="cover" id="uploadFile">
                                 {{-- <p class="help-block">Example block-level help text here.</p> --}}
                             </div>
@@ -42,17 +43,17 @@ Upload
                            <div class="form-group">
                                <label for="focusedinput" class="col-sm-2 control-label">Title</label>
                                <div class="col-sm-8">
-                                   <input type="text" class="form-control1" name="title" placeholder="Title">
+                               <input type="text" class="form-control1" value="{{$post->title}}" name="title" placeholder="Title">
                                </div>                               
                            </div>
                            <div class="form-group">
                                 <label for="txtarea1" class="col-sm-2 control-label">Body</label>
-                                <div class="col-sm-8"><textarea class="ckeditor" name="body"></textarea></div>
+                                <div class="col-sm-8"><textarea class="ckeditor" name="body">{{$post->body}}</textarea></div>
                             </div>
                             <div class="form-group">
                                <label for="selector1" class="col-sm-2 control-label">Category</label>
                                <div class="col-sm-8"><select name="category" id="selector1" class="form-control1">
-                                <option disabled selected>Select</option>
+                                <option disabled selected>{{$post->category->name}}</option>
                                 @foreach ($categories as $category)
                                 <option value="{{$category->id}}">{{$category->name}}</option>    
                                 @endforeach
@@ -87,7 +88,7 @@ Upload
                         
                             <div class="row">
                                 <div class="col-sm-8 col-sm-offset-2">
-                                    <button class="btn-success btn">Submit</button>
+                                    <button class="btn-success btn">Update</button>
                                 </div>
                             </div>
                          </div>
