@@ -104,8 +104,9 @@ class PostController extends Controller
      */
     public function show($id)
     {
+        $clientIP = \Request::ip();
         $post=Post::find($id);
-        return view('pages.post.show', compact('post'));
+        return view('pages.post.show', compact('post', 'clientIP'));
     }
 
     /**

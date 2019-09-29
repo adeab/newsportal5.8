@@ -53,7 +53,7 @@ Upload
                             <div class="form-group">
                                <label for="selector1" class="col-sm-2 control-label">Category</label>
                                <div class="col-sm-8"><select name="category" id="selector1" class="form-control1">
-                                <option disabled selected>{{$post->category->name}}</option>
+                                <option value="{{$post->category->id}}" disabled selected>{{$post->category->name}}</option>
                                 @foreach ($categories as $category)
                                 <option value="{{$category->id}}">{{$category->name}}</option>    
                                 @endforeach

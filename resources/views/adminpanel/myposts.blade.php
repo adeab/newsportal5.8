@@ -23,7 +23,7 @@ Posts List
               <tr>
                   <th scope="row">{{++$index}}</th>
                   <td>{{$post->title}}</td>
-                  <td>Category</td>
+                  <td>{{$post->category->name}}</td>
                   <td>{{$post->name}}</td>
                   <td>{{$post->email}}</td>
                   <td>{{$post->publication_status}}</td>
