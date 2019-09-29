@@ -48,7 +48,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">Modern</a>
+                <a class="navbar-brand" href="index.html"><img style="margin: -9px;" src="{{asset('frontend/img/agaiacholo.png')}}"></a>
             </div>
           
             <ul class="nav navbar-nav navbar-right">

@@ -17,7 +17,7 @@ Upload
 @section('body_content')
 <script src="https://cdn.ckeditor.com/4.12.1/standard/ckeditor.js"></script>
 
-<div class="graphs">
+<div class=" container graphs">
     <div class="xs">
         <h4>Upload Post</h4>
           <div class="tab-content">

@@ -267,7 +267,7 @@ ul.nav.navbar-nav.navbar-right {
   background-color:rgba(231, 231, 231, 0) !important;
 }
 .dropdown-menu {
-  min-width: 202px !important;
+  min-width: 108px !important;
 }  
 /* Active state */
 .wrapper-dropdown-4.active i.dropdown-icon{

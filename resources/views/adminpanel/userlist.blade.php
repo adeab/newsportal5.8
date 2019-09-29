@@ -5,7 +5,7 @@ User List
 @section('body_content')
 <div class="span_3">
     <div class="bs-example1" data-example-id="contextual-table">
-      <table class="table">
+      <table class="table table-responsive">
         <thead>
           <tr>
             <th>#</th>
@@ -33,7 +33,7 @@ User List
                         <form action="{{route('users.destroy', $user->id)}}" method="post">
                         @csrf
                         {{method_field('DELETE')}}
-                        <button onclick="return confirm('Are you sure you want to delete this user?')"><i class="fa fa-ban"></i> Delete</button>
+                        <button class="" style="background:transparent;border: 0;padding: 0px 19px;color:#000;" onclick="return confirm('Are you sure you want to delete this user?')"><i class="fa fa-ban"></i> Delete</button>
                         </form>
                          
                     </li>
