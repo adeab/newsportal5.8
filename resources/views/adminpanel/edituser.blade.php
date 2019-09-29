@@ -18,7 +18,7 @@ User Add
 		<div class="main">
 			
 				<div class="w3layouts_main_grid">
-					<form action="{{route('users.update', $user->id) }}" method="post" class="w3_form_post">
+					<form action="{{route('users.update', $user->id) }}" method="post" class="w3_form_post"  enctype="multipart/form-data">
 						@csrf
 						{{method_field('PATCH')}}
                         @if ($errors->any())
@@ -30,6 +30,12 @@ User Add
 							</ul>
 						</div>
 						@endif
+						<div class="w3_agileits_main_grid w3l_main_grid">
+							<span class="agileits_grid">
+								<label>Profile Image: </label>
+								<input type="file" name="user_image">
+							</span>
+						</div>
 						<div class="w3_agileits_main_grid w3l_main_grid">
 							<span class="agileits_grid">
 								<label>Name </label>

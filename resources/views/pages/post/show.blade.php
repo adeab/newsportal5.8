@@ -1,27 +1,71 @@
-@if (Auth::check())
-@if (Auth::user()->category=="Admin" || Auth::user()->category=="Editor" || Auth::user()->category=="Contributor")
-@php $layout="layouts.admin"; @endphp
-@else
-@php $layout="layouts.mainlayout"; @endphp
-@endif
-@else
-@php $layout="layouts.mainlayout"; @endphp
-@endif
 
-@extends($layout)
+
+@extends('layouts.mainlayout')
     @section('page_title')
     Post Page
     @endsection
 
     @section('body_content')
-<div class="graphs">
-        <div class="grid_3 grid_4">
 
-            <h3>{{$post->title}}</h3>
-            <h4>{{$post->category->name}}</h4>
-            <img class=" img-responsive" style="margin:0 auto;"  src="{{ asset('storage/blogImage/' . $post->cover_image) }}" >
-            <hr>
-            <p>{!!$post->body!!}</p>
+
+<div class="details_lay">
+  <div class="back_t"></div>
+  <div class="container">
+    <div class="col-md-12 ">
+      <div class="row">
+        <div class="title_tag">
+          <p>some thing</p>
+          <h1>২০১৮ এগিয়ে চলো ।  সর্বস্বত্ব সংরক্ষিত।</h1>
         </div>
+        <div class="title_list col-md-12">
+            <ul>
+              <li style="list-style: none;"><img src="{{ asset('frontend/img/user2.jpg')}}"><a href=""> likhok</a></li>
+              <li><a href="">2 days ago</a></li>
+              <li><a href="">250-view</a></li>
+              <li><a href="">9 client</a></li>
+            </ul>
+            <div class="de_right"><a href=""><i class="far fa-bookmark"></i> save</a></div>
+        </div>
+
+      </div>
+      <div class="col-md-12 final">
+        <img src="{{ asset('frontend/img/deadpool.jpg')}}">
+        <p>ভারতীয় বিজ্ঞাপন নির্মাতারা মাঝেমধ্যেই এমন কিছু দুর্দান্ত বিজ্ঞাপন বানিয়ে ফেলেন, যেগুলো দেখে চোখ ছানাবড়া হয়ে যায়, তন্ময় হয়ে ভাবতে বাধ্য হই- কি দেখলাম এটা! সপ্তাহ দুয়েক আগে বিশ্ব আত্মহত্যা প্রতিরোধ দিবস উপলক্ষ্যে নির্মাতা আনন্দ তিওয়ারি একটা বিজ্ঞাপন বানিয়েছেন। সেই বিজ্ঞাপনে বড়সড় কোন তারকা নেই, যারা আছেন, তাদের সবাইকেই আপনি হয়তো চেনেন, দীর্ঘদিন ধরে টেলিভিশন, ফিল্ম কিংবা শর্টফিল্মে তারা বাবা-মায়ের চরিত্রে অভিনয় করে আসছেন। কুমুদ মিশ্র, রত্না পাঠক শাহ, গজরাজ রাও, শিশির শর্মা, আয়েশা রাজা মিশ্র বা শিবা চাড্ডার মতো অভিনেতারা হাজির হয়েছেন সেই বিজ্ঞাপনে।
+
+বিজ্ঞাপনটার মূলভাব হচ্ছে, কথা বলুন। বিশেষ করে বাবা-মায়ের সঙ্গে, নইলে অন্য কারো সঙ্গে, সেটা প্রেমিকা হতে পারে, বন্ধু হতে পারে, হতে পারে কোন আত্মীয়, অনাত্মীয়, বা অন্য যে কেউ। নিজের ভেতরে কষ্টটাকে চেপে রাখবেন না, সেটা শেয়ার করুন কারো না কারো সঙ্গে, সমস্যার সঙ্গে দুঃখগুলোকেও মুক্ত বাতাসে ছড়িয়ে দিন, ভাগাভাগি করে নিন।
+
+‘সারাক্ষণ মোবাইলে কি? আমরা যখন তোর বয়েসী ছিলাম, গাছতলায় বসে পড়ালেখা করতাম। বাড়িতে কারেন্টও ছিল না, পাঁচ মাইল হেঁটে স্কুলে যাওয়া লাগতো, তবুও কোনদিন স্কুল কামাই দেইনি। এই বয়স থেকেই আমরা কামাই করে ফ্যামেলিকে সাপোর্ট করতাম, আর তুই সারাদিন পায়ের ওপর পা তুলে খাস আর মোবাইলে গুতাগুতি করিস!’- বাবা-মায়ের মুখ থেকে এসব কথা শুনতে হয়নি, এমন ছেলে-মেয়ে বোধহয় এই প্রজন্মে খুঁজে পাওয়া যাবে না। মধ্যবিত্ত পরিবারে তো অন্তত নয়।
+
+এসব শুনে শুনে বাবা-মায়েদের ওপর একটা বিরূপ ধারণা জন্মে অনেকের, একটা দূরত্ব তৈরী হয়ে যায় নিজের অজান্তেই। ঠিক এভাবেই শুরু হয়েছে বিজ্ঞাপনটার। প্রতিটা সংলাপ সেখানে গুরুত্বপূর্ণ, প্রতিটা বাক্য অসম্ভব জীবন্ত। আমাদের বাবা-মায়েদের যুগে যদি মোবাইল ফোন থাকতো, তারাও হয়তো ফেসবুক-ইনস্টাগ্রামে ডুবতেন, সেলফিম্যানিয়াতে তারাও আক্রান্ত হতেন, যুগের স্রোতে তারাও ভাসতেন- এই সহজ সত্যি কথাগুলোই বিজ্ঞাপনের মোড়কে তুলে এনেছেন আনন্দ তিওয়ারি।</p>
+      </div>
+    </div>
+  </div>
 </div>
+
+<!-- next previous start -->
+<div class="container" style="background:#fff;
+margin-bottom: 50px;">
+  <div class="col-md-12">
+    <div class="row">
+      <div class="col-md-6 pre">
+        <p><a href=""><i class="fas fa-long-arrow-alt-left"></i> next</a></p>
+        <img src="{{ asset('frontend/img/1.png')}}" style="float: left;">
+        <p class="sec_date">ইতি মল্লিক</p>
+        <h6>আপনাদের ট্রল-নোংরামি এবার কোপাকুপিতে গড়ালো!</h6>
+      </div>
+      <div class="col-md-6 ne">
+        <div class="pull_ne">
+          <p ><a href="">previous <i class="fas fa-long-arrow-alt-right"></i></a></p> 
+        </div>
+          <img src="{{ asset('frontend/img/1.png')}}" style="">
+            <p class="sec_date">ইতি মল্লিক</p>
+            <h6>আপনাদের ট্রল-নোংরামি এবার কোপাকুপিতে গড়ালো!</h6>
+
+       
+      </div>
+    </div>
+  </div>
+</div>
+<!-- next previous end -->
+
 @endsection

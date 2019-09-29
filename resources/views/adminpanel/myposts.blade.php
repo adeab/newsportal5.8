@@ -31,7 +31,7 @@ Posts List
                       <li class="dropdown" style="list-style:none;">
                     <a href="#" class="dropdown-toggle avatar" data-toggle="dropdown"><i class="fa fa-bars" aria-hidden="true"></i></a>
                     <ul class="dropdown-menu">
-                            <li class="m_2"><a href="{{route('posts.show', $post->id)}}"><i class="fa fa-pencil"></i> View Full Post</a></li>
+                            <li class="m_2"><a href="{{route('admin.postview', $post->id)}}"><i class="fa fa-pencil"></i> View Full Post</a></li>
                     <li class="m_2"><a href="{{route('posts.edit', $post->id)}}"><i class="fa fa-pencil"></i> Edit</a></li>
                     <li class="m_2">
                         <form action="{{route('posts.destroy', $post->id)}}" method="post">

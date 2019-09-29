@@ -39,7 +39,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 </head>
 <body>
 <div id="wrapper">
-     <!-- Navigation -->
+     
         <nav class="top1 navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -50,11 +50,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 </button>
                 <a class="navbar-brand" href="index.html">Modern</a>
             </div>
-            <!-- /.navbar-header -->
+          
             <ul class="nav navbar-nav navbar-right">
 				
 			    <li class="dropdown">
-	        		<a href="#" class="dropdown-toggle avatar" data-toggle="dropdown"><p>{{Auth::user()->name}}</p></a>
+                
+	        		<a href="#" class="dropdown-toggle avatar" data-toggle="dropdown"><img src="{{ asset('storage/userImage/'. Auth::user()->profile_picture) }}"></a>
 	        		<ul class="dropdown-menu">
 						
 						<li class="m_2"><a href="#"><i class="fa fa-shield"></i> Change Password</a></li>
@@ -79,6 +80,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         <li>
                             <a href="{{ route('admin.dashboard') }}"><i class="fa fa-dashboard fa-fw nav_icon"></i>Dashboard</a>
                         </li>
+                        @if(Auth::user()->category=="Admin")
                         <li>
                             <a href="#"><i class="fa fa-users fa-fw nav_icon"></i>Users<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
@@ -91,13 +93,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             </ul>
                             <!-- /.nav-second-level -->
                         </li>
+                        @endif
                         <li>
                             <a href="#"><i class="fa fa-file-text fa-fw nav_icon"></i>Posts<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
                                     <a href="{{route('posts.create')}}">Upload A Post</a>
                                 </li>
-                                
+                                @if(Auth::user()->category!="Contributor")
                                 <li>
                                     <a href="{{route('admin.allposts')}}">All Posts</a>
                                 </li>
@@ -105,6 +108,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                 <li>
                                     <a href="{{route('admin.pendingposts')}}">Pending Posts</a>
                                 </li>
+                                @endif
                                 <li>
                                     <a href="{{route('admin.myposts')}}">My Posts</a>
                                 </li>
